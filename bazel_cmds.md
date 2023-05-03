@@ -36,3 +36,9 @@ go mod init ...
 go mod tidy
 bazel run //:gazelle-update-repos // this update dpes.bzl to include all deps in go.mod
 ```
+
+## Java
+```
+need to run this after copy and pasting setup code int WORKSPACE.bazel
+bazel run @maven//:pin
+```
