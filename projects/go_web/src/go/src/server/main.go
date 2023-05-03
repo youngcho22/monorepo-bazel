@@ -4,8 +4,9 @@ import (
 	"log"
 	"net/http"
 
+	hello_world "github.com/youngcho22/monorepo-bazel/projects/go_hello_world/src/go/src/instabase/hello_world"
+
 	"github.com/gorilla/mux"
-	"github.com/youngcho22/monorepo-bazel/projects/go_hello_world/src/go/src/instabase/hello_world"
 )
 
 func YourHandler(w http.ResponseWriter, r *http.Request) {
