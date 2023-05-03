@@ -1,0 +1,13 @@
+{
+    "name": "monorepo",
+    "version": "0.0.1",
+    "depedencies": {
+        "express": "4.17.3"
+    },
+    "devDependencies": {
+        "@bazel/jasmine": "5.3.0",
+        "jasmine": "4.0.2",
+        "jasmine-core": "4.0.1",
+        "express": "4.17.3"
+    }
+}

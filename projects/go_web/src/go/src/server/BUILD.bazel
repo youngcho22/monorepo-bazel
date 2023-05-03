@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "server_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/youngcho22/monorepo-bazel/projects/go_web/src/go/src/server",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//projects/go_hello_world/src/go/src/instabase/hello_world",
+        "@com_github_gorilla_mux//:mux",
+    ],
+)
+
+go_binary(
+    name = "server",
+    embed = [":server_lib"],
+    visibility = ["//visibility:public"],
+)

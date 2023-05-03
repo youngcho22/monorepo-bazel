@@ -1,0 +1,35 @@
+load("@python_deps//:requirements.bzl", "requirement")
+load("@io_bazel_rules_docker//python3:image.bzl", py_image = "py3_image")
+load("@io_bazel_rules_docker//container:container.bzl", "container_push")
+
+py_library(
+    name = "calculator_api_lib",
+    srcs = ["main.py"],
+    deps = [
+        "//projects/calculator",
+        requirement("Flask"),
+    ],
+)
+
+py_binary(
+    name = "calculator-api",
+    srcs = ["main.py"],
+    main = "main.py",
+    deps = [":calculator_api_lib"],
+)
+
+py_image(
+    name = "calculator_api_image",
+    srcs = ["main.py"],
+    main = "main.py",
+    deps = [":calculator_api_lib"],
+)
+
+# container_push(
+#     name = "publish",
+#     image = ":calculator_api_image",
+#     format = "Docker",
+#     registry = "registry.hub.docker.com",
+#     repository = "...",
+#     tag = "..."
+# )
