@@ -1,0 +1,8 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_hello_world",
+    srcs = ["src/go/src/instabase/hello_world/hello_world.go"],
+    importpath = "github.com/example/project",
+    visibility = ["//visibility:public"],
+)
